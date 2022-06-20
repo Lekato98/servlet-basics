@@ -5,8 +5,16 @@ import javax.servlet.http.*;
 import java.io.IOException;
 
 public class AddOperationService extends HttpServlet {
+
     @Override
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+//        Each servlet have its own config
+        final String SERVICE_NAME = getServletConfig().getInitParameter("service_name");
+        System.out.println("Incoming Request#" + SERVICE_NAME);
+//        Shared between all servlet services
+        String providedBy = getServletContext().getInitParameter("service_provider");
+        System.out.println(providedBy);
+
         int num1 = Integer.parseInt(req.getParameter("num1"));
         int num2 = Integer.parseInt(req.getParameter("num2"));
         int result = num1 + num2;

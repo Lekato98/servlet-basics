@@ -3,7 +3,6 @@ package com.servlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 
 public class SquareOperationService extends HttpServlet {
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
@@ -15,6 +14,14 @@ public class SquareOperationService extends HttpServlet {
 //        HttpSession session = req.getSession();
 //        int number = (int) session.getAttribute("number");
 //        Redirect with Cookies
+//        Each servlet have its own config
+        final String SERVICE_NAME = getServletConfig().getInitParameter("service_name");
+        System.out.println("Incoming Request#" + SERVICE_NAME);
+
+//        Shared between all servlet services
+        String providedBy = getServletContext().getInitParameter("service_provider");
+        System.out.println(providedBy);
+
         Cookie[] cookies = req.getCookies();
         int number = 0;
         for (Cookie cookie : cookies) {

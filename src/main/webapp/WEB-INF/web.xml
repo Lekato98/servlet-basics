@@ -6,6 +6,10 @@
     <servlet>
         <servlet-name>add</servlet-name>
         <servlet-class>com.servlet.AddOperationService</servlet-class>
+        <init-param>
+            <param-name>service_name</param-name>
+            <param-value>Add Operation Service</param-value>
+        </init-param>
     </servlet>
     
     <servlet-mapping>
@@ -16,10 +20,19 @@
     <servlet>
         <servlet-name>square</servlet-name>
         <servlet-class>com.servlet.SquareOperationService</servlet-class>
+        <init-param>
+            <param-name>service_name</param-name>
+            <param-value>Square Operation Service</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>square</servlet-name>
         <url-pattern>/square</url-pattern>
     </servlet-mapping>
+
+    <context-param>
+        <param-name>service_provider</param-name>
+        <param-value>Provided by Hamza</param-value>
+    </context-param>
 </web-app>
