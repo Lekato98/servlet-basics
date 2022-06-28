@@ -9,7 +9,7 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
-<form action="add" method="post">
+<form action="add.jsp" method="post">
     <label>Number 1</label> <br/>
     <input type="text" name="num1"> <br/>
     <label>Number2</label> <br/>
